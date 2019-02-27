@@ -5,7 +5,7 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
     entry: {
-        app: './src/app.js'
+        page1: './src/app.js'
     },
     devtool: "cheap-module-eval-source-map",
     module: {
@@ -30,7 +30,7 @@ module.exports = {
         //new webpack.HotModuleReplacementPlugin()
     ],
     output: {
-        filename: 'bundle.js',
+        filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/dist/',
     }

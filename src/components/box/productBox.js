@@ -2,7 +2,6 @@
  * Created by shikuan on 2017/11/13.
  */
 import  React,{Component} from 'React'
-import {store} from '../../app';
 
 class ProductBox extends Component{
 
@@ -18,10 +17,19 @@ class ProductBox extends Component{
             value: this.state.value+1
         })
         console.log(this.state)
+        // document.getElementById('test').addEventListener('click',(e)=>{
+        //     console.log(this.state.value)
+        //     this.setState({
+        //         value: this.state.value+1
+        //     })
+        //     console.log(this.state.value)
+        // })
     }
     bindClick(){
-        console.log(this)
         console.log(this.state.value)
+        this.setState({
+            value: this.state.value+1
+        })
         this.setState({
             value: this.state.value+1
         })
@@ -46,12 +54,21 @@ class ProductBox extends Component{
         // xhr.send();
     }
 
+    bindClick2(){
+        console.log(this.state.value)
+        this.setState({
+            value: this.state.value+2
+        })
+        console.log(this.state)
+    }
+
     render () {
         return (
-            <div className="productBox" onClick={
+            <div id={"test"} className="productBox" onClick={
                 ()=>{
-                    store.dispatch({type:'ADD_TODO'})
-                        this.bindClick();
+                    // store.dispatch({type:'ADD_TODO'})
+                    this.bindClick();
+                    this.bindClick2();
                 }
             }>
                 Hello World+{this.state.value}!

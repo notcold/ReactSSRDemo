@@ -5,21 +5,27 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "watch": "webpack --watch",
-    "start": "webpack-dev-server --open"
+    "watch": "webpack --config webpack.server.js --watch",
+    "start": "webpack-dev-server --open",
+    "ssr": "webpack --config webpack.server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-plugin-transform-object-assign": "^6.22.0",
-    "react": "^16.8.1",
-    "react-dom": "^16.1.0",
+    "babel-preset-env": "^1.7.0",
+    "koa": "^2.7.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
-    "webpack": "^3.8.1"
+    "webpack": "^3.8.1",
+    "webpack-manifest-plugin": "^2.0.4"
   },
   "devDependencies": {
     "babel-loader": "^7.1.2",
